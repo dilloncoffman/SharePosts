@@ -5,6 +5,11 @@
         }
 
         public function index(){
+            // If user is logged in, make posts page the "Home" page
+            if(isLoggedIn()){
+                redirect('posts');
+            }
+
             $data = [
                 'title' => 'SharePosts',
                 'description' => 'Simple social network built on the CoffmanMVC PHP framework'
